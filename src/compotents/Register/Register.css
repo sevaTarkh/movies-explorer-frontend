@@ -1,0 +1,144 @@
+.register{
+    display: flex;
+    flex-direction: column;
+}
+
+.register__container{
+    display: flex;
+    flex-direction: column;
+    margin: 70px auto;
+    width: 396px;
+}
+
+.register__top{
+    display: flex;
+    flex-direction: column;
+}
+
+.register__logo{
+    margin: 0 0 40px;
+}
+
+.register__title{
+    color: #000;
+    font-family: 'Inter', 'Arial', 'sans-serif';
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin: 0 0 40px;
+}
+
+.register__form{
+    display: flex;
+    flex-direction: column;
+}
+
+.popup__field{
+    color: #000;
+    font-family: 'Inter', 'Arial', 'sans-serif';
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin: 0 0 20px;
+    height: 46px;
+    padding: 0;
+    border: none;
+}
+
+.popup__field:last-of-type{
+    margin-bottom: 10px;
+}
+
+.register__form-text{
+    color: #A0A0A0;
+    font-family: 'Inter', 'Arial', 'sans-serif';
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin: 0 0 10px;
+}
+
+.register__button{
+    color: #FFF;
+    text-align: center;
+    font-family: 'Inter', 'Arial', 'sans-serif';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    border-radius: 3px;
+    background: #000;
+    height: 45px;
+    margin: 70px 0 16px;
+    padding: 0;
+}
+
+.button:hover{
+    opacity: .7;
+    cursor: pointer;
+}
+
+.register__question{
+    color: #A0A0A0;
+    text-align: center;
+    font-family: 'Inter', 'Arial', 'sans-serif';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin: 0;
+}
+
+.register__link{
+    color: #000;
+    text-align: center;
+    font-family: 'Inter', 'Arial', 'sans-serif';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-decoration: none;
+    margin-left: 6px;
+}
+
+.register__error{
+    color: #FF4062;
+    font-family: 'Inter', 'Arial', 'sans-serif';
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+
+@media screen and (max-width: 970px){
+    .register__container{
+        margin: 232px auto;
+    }
+}
+
+@media screen and (max-width: 652px){
+    .register__container{
+        margin: 50px auto 30px;
+        width: 260px;
+    }
+    .register__logo{
+        margin-bottom: 50px;
+    }
+    .register__top{
+        align-items: center;
+    }
+    .register__button{
+        margin: 157px 0 14px;
+        font-size: 12px;
+    }
+    .register__question{
+        font-size: 12px;
+    }
+    .register__link{
+        font-size: 12px;
+    }
+}

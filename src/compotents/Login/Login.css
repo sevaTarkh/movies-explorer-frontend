@@ -1,0 +1,114 @@
+.login{
+    display: flex;
+    flex-direction: column;
+}
+
+.login__container{
+    display: flex;
+    flex-direction: column;
+    margin: 70px auto;
+    width: 396px;
+}
+
+.login__top{
+    display: flex;
+    flex-direction: column;
+}
+
+.login__logo{
+    margin: 0 0 40px;
+}
+
+.login__title{
+    color: #000;
+    font-family: 'Inter', 'Arial', 'sans-serif';
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin: 0 0 40px;
+}
+
+.login__form{
+    display: flex;
+    flex-direction: column;
+}
+
+.login__form-text{
+    color: #A0A0A0;
+    font-family: 'Inter', 'Arial', 'sans-serif';
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin: 0 0 10px;
+}
+
+
+
+.login__button{
+    color: #FFF;
+    text-align: center;
+    font-family: 'Inter', 'Arial', 'sans-serif';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    border-radius: 3px;
+    background: #000;
+    height: 45px;
+    margin: 170px 0 16px;
+    padding: 0;
+}
+
+.login__question{
+    color: #A0A0A0;
+    text-align: center;
+    font-family: 'Inter', 'Arial', 'sans-serif';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin: 0;
+}
+
+.login__link{
+    color: #000;
+    text-align: center;
+    font-family: 'Inter', 'Arial', 'sans-serif';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-decoration: none;
+    margin-left: 6px;
+}
+
+@media screen and (max-width: 970px){
+    .login__container{
+        margin: 232px auto;
+    }
+}
+
+@media screen and (max-width: 652px){
+    .login__container{
+        margin: 50px auto 30px;
+        width: 260px;
+    }
+    .login__logo{
+        margin-bottom: 50px;
+    }
+    .login__top{
+        align-items: center;
+    }
+    .login__button{
+        margin: 267px 0 14px;
+        font-size: 12px;
+    }
+    .login__question{
+        font-size: 12px;
+    }
+    .login__link{
+        font-size: 12px;
+    }
+}

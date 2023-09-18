@@ -1,0 +1,247 @@
+.logo{
+    width: 38px;
+    height: 38px;
+}
+
+.header__logo{
+    margin: 18px 0 18px 70px;
+}
+
+.main__header{
+    background-color: #F3C1F8;
+}
+.white__header{
+    background: #FFF;
+}
+.header{
+    height: 74px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.header__navigation{
+    display: flex;
+    margin: auto 70px auto 0;
+}
+.header__link-nav{
+    text-decoration: none;
+    margin-right: 10px;
+}
+.header__link-nav:last-of-type{
+    margin-right: 0;
+}
+.header__link{
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+.link:hover{
+    opacity: .8;
+}
+
+.header__link:last-of-type{
+    margin-right: 0;
+}
+
+.header__link_theme_dark{
+    width: 76px;
+    height: 32px;
+    border-radius: 3px;
+    background: #000;  
+    padding: 0;
+}
+
+.header__text{
+    color: #000;
+    text-align: right;
+    font-family: 'Inter', 'Arial', 'sans-serif';
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 16px; /* 133.333% */
+    text-decoration: none;
+    margin: 0;
+    text-align: center;
+    margin: 8px 20px;
+}
+
+.header__text_theme_white{
+    color: #FFF;
+}
+
+.header__text-nav{
+    color: #000;
+    text-align: right;
+    font-family: 'Inter', 'Arial', 'sans-serif';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px; /* 128.571% */
+    margin: 28px 0;
+}
+
+
+.header__text-acc{
+    color: #000;
+    font-family: 'Inter', 'Arial', 'sans-serif';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 16px; /* 114.286% */
+    margin: 0 13px 0 0;
+}
+
+.header__icon-container{
+    width: 30px;
+    height: 30px;
+    background-color: #000;
+    border-radius: 6px;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.header__icon-black{
+    background-color: #FFF;
+    border-radius: 6px;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+}
+.header__profile-container{
+    margin: 21px 0 21px 30px;
+    width: 100px;
+    display: flex;
+    align-items: center;
+}
+.header__burger{
+    width: 44px;
+    height: 44px;
+    border: none;
+    margin: 15px 30px 15px 0;
+    padding: 0;
+    display: none;
+    background-color: inherit;
+}
+
+.header__burger-menu{
+    position: absolute;
+    width: 520px;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    z-index: 10;
+    background-color: #FFF;
+    display: none;
+    transition: all 0.2s ease-in-out;
+}
+
+.overlay{
+	position: fixed; 
+	left: 0;
+	top: 0;
+	width: 100%; 
+	height: 100%;
+	z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    background-color: rgba(0, 0, 0, 0.3);
+    transition: all 0.2s ease-in-out;
+}
+
+.overlay__visible{
+    visibility: visible;
+    opacity: 1;
+}
+.open__menu{
+    display: block;
+}
+.close__menu{
+    display: none;
+}
+.header__burger-navigation{
+    display: flex;
+    flex-direction: column;
+    margin: 131px auto 92px;
+    width: 340px;
+}
+.header__burger-button{
+    position: absolute;
+    top: 22px;
+    right: 22px;
+    border: none;
+    padding: 0;
+}
+.button__close{
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+}
+@media screen and (max-width: 980px){
+    .header__burger{
+        display: block;
+    }
+    .header__navigation{
+        display: none;
+    }
+    .header__logo{
+        margin-left: 30px;
+    }
+    .header__navigation{
+        margin-right: 30px;
+    }
+    .header__text-nav{
+        margin: 0;
+        text-align: center;
+    }
+    .header__text-nav{
+        margin: 28px 0 0;
+    }
+    .header__link-nav{
+        margin-right: 0;
+    }
+    .header__profile-container{
+        margin: 620px auto 0;
+    }
+}
+
+@media screen and (max-width: 686px){
+    .header__logo{
+        margin-left: 14px;
+    }
+    .header__navigation{
+        margin-right: 14px;
+    }
+    .header__text{
+        font-size: 10px;
+        margin: 5px 12px;
+    }
+    .header__link{
+        margin-right: 2px;
+    }
+    .header__link_theme_dark{
+        width: 54px;
+        height: 26px;
+    }
+    .header__burger{
+        width: 40px;
+        margin-right: 14px;
+    }
+    .header__burger-menu{
+        width: 100vw;
+    }
+    .header__burger-navigation{
+        width: 300px;
+        margin: 116px auto 48px;
+    }
+    .header__profile-container{
+        margin-top: 444px;
+    }
+    .header__burger-button{
+        top: 13px;
+        right: 13px;
+    }
+}
