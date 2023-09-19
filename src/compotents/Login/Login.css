@@ -21,7 +21,7 @@
 
 .login__title{
     color: #000;
-    font-family: 'Inter', 'Arial', 'sans-serif';
+    font-family: 'Inter', 'Arial', sans-serif;
     font-size: 24px;
     font-style: normal;
     font-weight: 500;
@@ -36,7 +36,7 @@
 
 .login__form-text{
     color: #A0A0A0;
-    font-family: 'Inter', 'Arial', 'sans-serif';
+    font-family: 'Inter', 'Arial', sans-serif;
     font-size: 10px;
     font-style: normal;
     font-weight: 400;
@@ -49,7 +49,7 @@
 .login__button{
     color: #FFF;
     text-align: center;
-    font-family: 'Inter', 'Arial', 'sans-serif';
+    font-family: 'Inter', 'Arial', sans-serif;
     font-size: 14px;
     font-style: normal;
     font-weight: 500;
@@ -59,12 +59,13 @@
     height: 45px;
     margin: 170px 0 16px;
     padding: 0;
+    border: none;
 }
 
 .login__question{
     color: #A0A0A0;
     text-align: center;
-    font-family: 'Inter', 'Arial', 'sans-serif';
+    font-family: 'Inter', 'Arial', sans-serif;
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
@@ -75,7 +76,7 @@
 .login__link{
     color: #000;
     text-align: center;
-    font-family: 'Inter', 'Arial', 'sans-serif';
+    font-family: 'Inter', 'Arial', sans-serif;
     font-size: 14px;
     font-style: normal;
     font-weight: 400;

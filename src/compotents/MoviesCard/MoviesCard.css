@@ -6,7 +6,7 @@
 
 .movie__name{
     color: #000;
-    font-family: 'Inter', 'Arial', 'sans-serif';
+    font-family: 'Inter', 'Arial', sans-serif;
     font-size: 13px;
     font-style: normal;
     font-weight: 500;
@@ -20,7 +20,7 @@
 .movie__duration{
     color: #A0A0A0;
     text-align: center;
-    font-family: 'Inter', 'Arial', 'sans-serif';
+    font-family: 'Inter', 'Arial', sans-serif;
     font-size: 11px;
     font-style: normal;
     font-weight: 400;
@@ -63,7 +63,7 @@
     background-color: inherit;
     padding: 0;
 }
-.movie__button-delete{
+.movie__delete{
     width: 21px;
     height: 21px;
 }
@@ -76,7 +76,7 @@
     background: #F9F9F9;
     color: #000;
     text-align: center;
-    font-family: 'Inter', 'Arial', 'sans-serif';
+    font-family: 'Inter', 'Arial', sans-serif;
     font-size: 10px;
     font-style: normal;
     font-weight: 400;

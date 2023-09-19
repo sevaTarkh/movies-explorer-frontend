@@ -24,11 +24,13 @@ const Register = ({registerUser}) => {
         registerUser(form)
     }
     return(
-        <section className='register'>
+        <main className='register'>
             <div className=' register__container'>
                 <div className='register__top'>
-                    <img  className='logo register__logo' src={logo} alt='логотип'/>
-                    <h2 className='register__title'>Добро пожаловать!</h2>
+                    <Link to='/'>
+                        <img  className='logo register__logo' src={logo} alt='логотип'/>
+                    </Link>
+                    <h1 className='register__title'>Добро пожаловать!</h1>
                 </div>
                 <form className='register__form' onSubmit={handleSubmit}>
                     <label className='register__form-text'>Имя</label>
@@ -38,9 +40,11 @@ const Register = ({registerUser}) => {
                         id='name'
                         required
                         name='name'
-                        type='name'
+                        type='text'
                         value={form.name}
                         onChange={handleChange}
+                        minLength={2}
+                        maxLength={15}
                     />
                     <label className='register__form-text'>E-mail</label>
                     <input
@@ -63,6 +67,8 @@ const Register = ({registerUser}) => {
                         type='password'
                         value={form.password}
                         onChange={handleChange}
+                        minLength={2}
+                        maxLength={15}
                     />
                     <span className='register__error'>Что-то пошло не так...</span>
                     <button type='submit' className='button register__button' onClick={() => navigate('/signin')}>Зарегестрироваться</button>
@@ -72,7 +78,7 @@ const Register = ({registerUser}) => {
                     <Link to='/signin' className='link register__link'>Войти</Link>
                 </p>
             </div>
-        </section>     
+        </main>     
     )
 }
 

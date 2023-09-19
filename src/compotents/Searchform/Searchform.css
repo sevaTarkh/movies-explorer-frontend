@@ -27,7 +27,7 @@
 .search__form-container{
     display: flex;
     justify-content: space-between;
-    width: 869px;
+    width: 859px;
 }
 .search__icon{
     width: 34px;
@@ -39,7 +39,7 @@
     color: #FFF;
     text-align: center;
     font-feature-settings: 'clig' off, 'liga' off;
-    font-family: 'Inter', 'Arial', 'sans-serif';
+    font-family: 'Inter', 'Arial', sans-serif;
     font-size: 11px;
     font-style: normal;
     font-weight: 500;
@@ -50,12 +50,13 @@
     height: 34px;
     margin: 19px 19px 19px 0;
     padding: 0;
+    border: none;
 }
 
 .search__input{
     color: #A0A0A0;
     font-feature-settings: 'clig' off, 'liga' off;
-    font-family: 'Inter', 'Arial', 'sans-serif';
+    font-family: 'Inter', 'Arial', sans-serif;
     font-size: 18px;
     font-style: normal;
     font-weight: 400;
@@ -68,9 +69,9 @@
 }
 
 .search__text{
-    margin: 0 20px 0 0;
+    margin: 0 30px 0 0;
     color: #000;
-    font-family: 'Inter', 'Arial', 'sans-serif';
+    font-family: 'Inter', 'Arial', sans-serif;
     font-size: 13px;
     font-style: normal;
     font-weight: 400;
@@ -131,7 +132,7 @@
     border-radius: 50%;
 }
 
-@media screen and (max-width: 1148px){
+@media screen and (max-width: 1156px){
     .search__form{
         max-width: 708px;
         margin: 80px auto 0;
@@ -143,9 +144,12 @@
         margin-top: 109px;
         width: calc(100% - 60px);
     }
+    .search__text{
+        margin-right: 20px;
+    }
 }
 
-@media screen and (max-width: 712px){
+@media screen and (max-width: 729px){
     .search__form{
         max-width: 300px;
     }

@@ -1,12 +1,15 @@
 import './Profile.css';
 import Header from '../Header/Header.js';
+import { Link, useNavigate } from 'react-router-dom';
 
 function Profile(){
+    const navigate = useNavigate()
+
     return(
-        <section className='profile'>
+        <main className='profile'>
             <Header/>
-            <div className='profile__container'>
-                <h2 className='profile__hello'>Привет, Всеволод!</h2>
+            <section className='profile__container'>
+                <h1 className='profile__hello'>Привет, Всеволод!</h1>
                 <form className='profile__form'>
                     <div className='profile__input-container'>
                         <label className='profile__input-text'>
@@ -35,10 +38,10 @@ function Profile(){
                         />
                     </div>
                     <button className='button profile__edit-button' type='submit'>Редактировать</button>
-                    <button className='button profile__exit-button' type='submit'>Выйти из аккаунта</button>
+                    <button className='button profile__exit-button' type='submit' onClick={() => navigate('/')}>Выйти из аккаунта</button>
                 </form>
-            </div>
-        </section>
+            </section>
+        </main>
     )
 }
 

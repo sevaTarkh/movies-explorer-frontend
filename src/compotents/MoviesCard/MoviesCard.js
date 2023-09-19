@@ -8,12 +8,12 @@ function MoviesCard({movie}){
     const location = useLocation();
     const [isSave, isSaved] = useState(false);
     return(
-        <section className='movie'>
+        <li className='movie'>
             <a className='movie__image-link' href={movie.trailerLink} target='_blank' rel='noreferrer'>
                 <img alt={movie.nameRU} className='movie__image' src={movie.image}/>
             </a>
             <div className='movie__bottom-container'>
-                <p className='movie__name'>{movie.nameRU}</p>
+                <h2 className='movie__name'>{movie.nameRU}</h2>
                 <div className='movie__duration'>{movie.duration}</div>
             </div>
             {location.pathname === '/movies' ?
@@ -24,10 +24,10 @@ function MoviesCard({movie}){
                 </button>
               :  
                 <button type='button' className='button movie__button-delete'>
-                    <img className='movie__button' alt='фото крестика' src={deletemovie}/>
+                    <img className='movie__delete' alt='фото крестика' src={deletemovie}/>
                 </button>  
             }
-        </section>   
+        </li>   
     )
 }
 

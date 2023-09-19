@@ -6,7 +6,7 @@
     margin: 110px auto;
     max-width: 1140px;
 }
-.about__title{
+.title{
     color: #000;
     font-family: 'Inter', 'Arial', sans-serif;
     font-size: 22px;
@@ -17,9 +17,9 @@
     margin: 0;
 }
 
-.section-title{
+.title__container{
     border-bottom: 1px solid;
-    height: 51px;
+    height: 50px;
     width: 100%;
 }
 
@@ -121,9 +121,6 @@
     }
     .about__title{
         font-size: 18px;
-    }
-    .section-title{
-        height: 56px;
     }
     .about__project{
         display: flex;

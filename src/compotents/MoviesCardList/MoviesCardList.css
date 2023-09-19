@@ -5,6 +5,7 @@
     grid-column-gap: 30px;
     grid-row-gap: 59px;
     margin: 70px auto 28px;
+    padding: 0;
 }
 
 @media screen and (max-width: 1162px){

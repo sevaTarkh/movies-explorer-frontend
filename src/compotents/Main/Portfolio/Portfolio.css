@@ -23,10 +23,13 @@
     display: flex;
     flex-direction: column;
     margin: 50px 0 0;
+    padding: 0;
 }
-
-.portfolio__link{
+.portfolio__project{
+    list-style-type: none;
     margin: 0 0 40px;
+}
+.portfolio__link{
     display: flex;
     justify-content: space-between;
     text-decoration: none;
@@ -34,7 +37,7 @@
     height: 50px;
 }
 
-.portfolio__link:last-child{
+.portfolio__project:last-child{
     margin: 0;
 }
 

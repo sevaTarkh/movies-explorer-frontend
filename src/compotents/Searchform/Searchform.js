@@ -13,12 +13,13 @@ function Searchform(){
                             className='search__input'
                             id='search-film'
                             placeholder='Фильмы'
+                            required
                         />   
                         <button type='submit' className='button search__button'>Найти</button>
                     </div>
                 </div>
                     <div className='search__search-container'>
-                        <label className='search__input-switch'>
+                        <label className='link search__input-switch'>
                             <input
                                 type='checkbox'
                                 className='search__input-checkbox'

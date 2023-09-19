@@ -25,11 +25,13 @@ const Login = ({loginUser}) =>{
         loginUser(form)
     }
     return (
-        <section className='login'>
+        <main className='login'>
             <div className=' login__container'>
                 <div className='login__top'>
-                    <img  className='logo login__logo' src={logo} alt='логотип'/>
-                    <h2 className='login__title'>Рады видеть!</h2>
+                    <Link to='/'>
+                        <img  className='logo login__logo' src={logo} alt='логотип'/>
+                    </Link>
+                    <h1 className='login__title'>Рады видеть!</h1>
                 </div>
                 <form className='login__form' onSubmit={handleSubmit}>
                     <label className='login__form-text'>email</label>
@@ -53,15 +55,17 @@ const Login = ({loginUser}) =>{
                         type='password'
                         value={form.password}
                         onChange={handleChange}
+                        minLength={2}
+                        maxLength={15}
                     />
                     <button type='submit' className='button login__button' onClick={() => navigate('/movies')}>Войти</button>
                 </form>
                 <p className='login__question'>
                     Еще не зарегестрированы? 
-                    <Link to='/signup' className='login__link'>Регистрация</Link>
+                    <Link to='/signup' className='link login__link'>Регистрация</Link>
                 </p>
             </div>
-        </section>
+        </main>
     )
 }
 

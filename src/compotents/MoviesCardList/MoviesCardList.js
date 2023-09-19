@@ -4,7 +4,7 @@ import MoviesCard from '../MoviesCard/MoviesCard.js'
 
 function MoviesCardList({movies}){
     return(
-        <section className='movies-list'>
+        <ul className='movies-list'>
             {
                movies.map((movie)=>{
                   return(
@@ -15,7 +15,7 @@ function MoviesCardList({movies}){
                   );
                })
             }
-        </section>
+        </ul>
     )
 }
 

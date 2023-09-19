@@ -6,7 +6,7 @@
 .movies__button-more{
     color: #000;
     text-align: center;
-    font-family: 'Inter', 'Arial', 'sans-serif';
+    font-family: 'Inter', 'Arial', sans-serif;
     font-size: 12px;
     font-style: normal;
     font-weight: 500;
@@ -14,10 +14,17 @@
     border: none;
     margin: 61px auto 89px;
     padding: 0;
+    width: 320px;
+    height: 36px;
 }
 
 @media screen and (max-width: 1162px){
     .movies__button-more{
         margin: 50px auto 80px;
+    }
+}
+@media screen and (max-width: 729px){
+    .movies__button-more{
+        width: 240px;
     }
 }

@@ -11,6 +11,7 @@ import Profile from '../Profile/Profile.js';
 import Movies from '../Movies/Movies.js';
 import SavedMovies from '../SavedMovies/SavedMovies.js';
 import NotFound from '../NotFound/NotFound.js';
+import Footer from '../Footer/Footer.js'
 
 
 function App() {

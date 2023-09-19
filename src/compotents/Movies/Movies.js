@@ -10,15 +10,15 @@ function Movies(){
 
     
     return(
-        <section className='movies'>
+        <main className='movies'>
             <Header/>
             <Searchform/>
-            <MoviesCardList 
+            <MoviesCardList
                 movies={movie}
             />
-            <button className='button movies__button-more'>Еще</button>
+            <button className='button movies__button-more' type='button'>Еще</button>
             <Footer/>
-        </section>
+        </main>
     )
 }
 

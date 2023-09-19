@@ -41,6 +41,8 @@
     .promo__title{
         margin: 207px auto 246px;
         font-size: 31px;
+        max-width: 300px;
+        line-height: 39px;
     }
     .promo__image{
         top: 142px;
