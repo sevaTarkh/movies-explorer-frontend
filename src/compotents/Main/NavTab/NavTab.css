@@ -12,10 +12,12 @@
     margin: 0;
     padding: 0;
 }
-
+.nav__element{
+    list-style-type: none;
+    margin-right: 40px;
+}
 .nav__link{
     color: #FFF;
-    margin-right: 40px;
     font-family: 'Inter', 'Arial', sans-serif;
     font-size: 13px;
     font-weight: 500;
@@ -27,17 +29,19 @@
     height: 17px;
 }
 
-.nav__link:last-child{
+.nav__element:last-child{
     margin-right: 0;
 }
 
 @media screen and (max-width: 652px){
     .nav__link{
         font-size: 11px;
-        margin-right: 24px;
         height: 15px;
     }
     .nav{
         padding: 25px;
+    }
+    .nav__element{
+        margin-right: 24px;
     }
 }

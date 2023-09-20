@@ -5,7 +5,7 @@ function AboutMe(){
     return(
         <section className='aboutme' id='student'>
             <div className='aboutme__box'>
-                <h2 className='title title__container'>Студент</h2>
+                <h2 className='title title-container'>Студент</h2>
                 <div className='aboutme__container'>
                     <div className='aboutme__container-text'>
                         <h3 className='aboutme__subtitle'>Всеволод</h3>

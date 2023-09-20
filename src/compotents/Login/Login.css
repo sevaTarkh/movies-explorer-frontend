@@ -93,7 +93,7 @@
 
 @media screen and (max-width: 652px){
     .login__container{
-        margin: 50px auto 30px;
+        margin: 56px auto 30px;
         width: 260px;
     }
     .login__logo{
@@ -111,5 +111,8 @@
     }
     .login__link{
         font-size: 12px;
+    }
+    .login__title{
+        margin-bottom: 80px;
     }
 }

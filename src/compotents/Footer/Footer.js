@@ -16,9 +16,7 @@ function Footer(){
                         <a className='link footer__text footer__link' href='https://github.com/sevaTarkh' target='_blank' rel="noreferrer">
                             Github
                         </a>
-                    </li>
-                    
-                    
+                    </li>               
                 </ul>
             </div>
         </footer>

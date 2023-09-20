@@ -17,7 +17,7 @@ function MoviesCard({movie}){
                 <div className='movie__duration'>{movie.duration}</div>
             </div>
             {location.pathname === '/movies' ?
-                <button type='button' id='movie-button' className={`button ${isSave ? 'movie__button-save': 'movie__button'}`} onClick={()=>{
+                <button type='button' className={`button ${isSave ? 'movie__button-save': 'movie__button'}`} onClick={()=>{
                     isSaved(true)
                 }}>
                     {isSave ? <img src={save} alt='фото галочки' className='movie__save'/> : 'Сохранить'}

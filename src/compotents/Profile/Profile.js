@@ -1,6 +1,6 @@
 import './Profile.css';
 import Header from '../Header/Header.js';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 function Profile(){
     const navigate = useNavigate()
@@ -22,6 +22,8 @@ function Profile(){
                             type='text'
                             placeholder='username'
                             name='name-profile'
+                            minLength={2}
+                            maxLength={15}
                         />
                     </div>
                     <div className='profile__input-container'>

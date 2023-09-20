@@ -17,7 +17,7 @@
     margin: 0;
 }
 
-.title__container{
+.title-container{
     border-bottom: 1px solid;
     height: 50px;
     width: 100%;
@@ -116,10 +116,9 @@
 
 @media screen and (max-width: 686px){
     .about__container{
-        margin: 70px auto;
         max-width: 284px;
     }
-    .about__title{
+    .title{
         font-size: 18px;
     }
     .about__project{
@@ -131,9 +130,11 @@
     }
     .about__project-title{
         margin-bottom: 16px;
+        font-size: 18px;
     }
     .about__project-text{
         margin-bottom: 56px;
+        font-size: 11px;
     }
     .about__project-text:last-of-type{
         margin-bottom: 0;

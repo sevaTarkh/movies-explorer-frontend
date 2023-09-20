@@ -64,6 +64,7 @@
 }
 .button__close{
     object-fit: cover;
+    background-color: #FFF;
 }
 
 .header__text-nav{

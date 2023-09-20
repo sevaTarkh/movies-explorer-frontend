@@ -27,18 +27,19 @@
 }
 .portfolio__project{
     list-style-type: none;
-    margin: 0 0 40px;
+    margin: 0 0 20px;
+    border-bottom: 1px solid #E8E8E8;
 }
 .portfolio__link{
     display: flex;
     justify-content: space-between;
     text-decoration: none;
     align-items: center;
-    height: 50px;
 }
 
 .portfolio__project:last-child{
     margin: 0;
+    border-bottom: none;
 }
 
 .portfolio__text{
@@ -49,8 +50,11 @@
     font-weight: 400;
     line-height: 50px; /* 166.667% */
     letter-spacing: -1.2px;
+    margin: 0 0 19px;
 }
-
+.portfolio__text:last-child{
+    margin: 0;
+}
 .portfolio__arrow{
     height: 18px;
     width: 18px;
@@ -73,6 +77,7 @@
     }
     .portfolio__text{
         font-size: 18px;
+        line-height: 28px;
     }
     .portfolio__titile{
         font-size: 14px;
@@ -83,8 +88,5 @@
     }
     .portfolio__navigation{
         margin-top: 40px;
-    }
-    .portfolio__link{
-        height: 28px;
     }
 }
