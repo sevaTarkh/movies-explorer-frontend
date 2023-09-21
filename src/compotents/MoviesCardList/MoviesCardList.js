@@ -5,16 +5,18 @@ import MoviesCard from '../MoviesCard/MoviesCard.js'
 function MoviesCardList({movies}){
     return(
         <section className='movies-list'>
-            {
-               movies.map((movie)=>{
-                  return(
-                     <MoviesCard 
-                        movie={movie}
-                        key={movie.id}
-                    />
-                  );
-               })
-            }
+            <ul className='movies-list__cards'>
+                {
+                    movies.map((movie)=>{
+                        return(
+                            <MoviesCard 
+                                movie={movie}
+                                key={movie.id}
+                            />
+                        );
+                    })
+                }
+            </ul>
         </section>
     )
 }

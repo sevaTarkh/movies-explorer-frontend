@@ -74,18 +74,19 @@
 @media screen and (max-width: 686px){
     .portfolio__container{
         max-width: 292px;
-        margin-bottom: 70px;
+        margin-bottom: 51px;
     }
     .portfolio__text{
         font-size: 18px;
         line-height: 28px;
+        letter-spacing: -0.72px;
     }
     .portfolio__titile{
         font-size: 14px;
     }
     .portfolio__arrow{
-        height: 16px;
-        width: 16px;
+        width: 14px;
+        height: 24px;
     }
     .portfolio__navigation{
         margin-top: 40px;

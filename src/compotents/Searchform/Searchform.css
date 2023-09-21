@@ -26,7 +26,7 @@
 .search__input-container{
     display: flex;
 }
-.search__search-container{
+.search__filter-container{
     display: flex;
     border-left: 1px solid #CBCBCB;
     margin: 16px 0;
@@ -180,8 +180,9 @@
     }
     .search__input{
         margin: 25px 19px;
+        font-size: 14px;
     }
-    .search__search-container{
+    .search__filter-container{
         border-left: none;
         justify-content: center;
         margin: 46px 0 0 0;
@@ -192,5 +193,10 @@
     }
     .search__input-switch{
         margin-right: 13px;
+        margin-left: 0;
+    }
+    .search__text{
+        font-size: 11px;
+        margin-right: 0;
     }
 }

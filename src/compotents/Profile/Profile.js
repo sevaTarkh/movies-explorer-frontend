@@ -9,7 +9,6 @@ function Profile(){
         <>
             <Header/>
             <main className='profile'>
-                
                 <section className='profile__container'>
                     <h1 className='profile__hello'>Привет, Всеволод!</h1>
                     <form className='profile__form'>

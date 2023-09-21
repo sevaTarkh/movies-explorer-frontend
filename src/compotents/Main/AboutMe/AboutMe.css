@@ -108,21 +108,21 @@
     }
     .aboutme__subtitle{
         font-size: 30px;
-        margin-top: 40px;
+        margin-top: 60px;
         line-height: normal;
+        letter-spacing: -1.2px;
     }
     .aboutme__subtitle-about{
         font-size: 11px;
         margin-top: 20px;
+        line-height: 16px;
     }
     .aboutme__text{
         font-size: 11px;
-    }
-    .aboutme__link{
-        margin-top: 110px;
+        line-height: 16px;
     }
     .aboutme__container{
         flex-direction: column-reverse;
-        justify-content: none;
+        margin-top: 60px;
     }
 }

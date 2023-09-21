@@ -34,7 +34,7 @@
     flex-direction: column;
 }
 
-.popup__field{
+.popup-field{
     color: #000;
     font-family: 'Inter', 'Arial', sans-serif;
     font-size: 13px;
@@ -45,13 +45,14 @@
     height: 16px;
     padding: 15px;
     border: none;
-    background-color: #F9F9F9;;
+    background-color: #F9F9F9;
+    border-radius: 8px;
 }
-.popup__field:focus{
+.popup-field:focus{
     outline: none;
     border-bottom: 1px solid black;
 }
-.popup__field:last-of-type{
+.popup-field:last-of-type{
     margin-bottom: 10px;
 }
 

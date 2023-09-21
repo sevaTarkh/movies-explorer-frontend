@@ -103,10 +103,13 @@
         margin-top: 60px;
         font-size: 30px;
         line-height: normal;
+        letter-spacing: -1.2px;
     }
     .techs__text{
         margin-top: 24px;
         font-size: 11px;
+        line-height: 16px; /* 145.455% */
+        letter-spacing: -0.44px;
     }
     .techs__container{
         margin-top: 50px;
@@ -117,5 +120,8 @@
     }
     .techs__container-element{
         margin: 0;
+    }
+    .techs__container-element-text{
+        letter-spacing: -0.48px;
     }
 }

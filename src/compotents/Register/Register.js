@@ -35,7 +35,7 @@ const Register = ({registerUser}) => {
                 <form className='register__form' onSubmit={handleSubmit}>
                     <label className='register__form-text'>Имя</label>
                     <input
-                        className='popup__field'
+                        className='popup-field'
                         placeholder='name'
                         id='name'
                         required
@@ -48,7 +48,7 @@ const Register = ({registerUser}) => {
                     />
                     <label className='register__form-text'>E-mail</label>
                     <input
-                        className='popup__field'
+                        className='popup-field'
                         placeholder='email'
                         id='email'
                         required
@@ -59,7 +59,7 @@ const Register = ({registerUser}) => {
                     />
                     <label className='register__form-text'>Пароль</label>
                     <input
-                        className='popup__field'
+                        className='popup-field'
                         placeholder='Пароль'
                         id='password'
                         required

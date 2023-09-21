@@ -18,7 +18,7 @@ function Searchform(){
                         <button type='submit' className='button search__button'>Найти</button>
                     </div>
                 </div>
-                    <div className='search__search-container'>
+                    <div className='search__filter-container'>
                         <label className='link search__input-switch'>
                             <input
                                 type='checkbox'

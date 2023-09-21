@@ -121,6 +121,7 @@
     }
     .title{
         font-size: 18px;
+        letter-spacing: -0.72px;
     }
     .about__project{
         display: flex;
@@ -132,10 +133,12 @@
     .about__project-title{
         margin-bottom: 16px;
         font-size: 18px;
+        letter-spacing: -0.72px;
     }
     .about__project-text{
         margin-bottom: 56px;
         font-size: 11px;
+        line-height: 16px;
     }
     .about__project-text:last-of-type{
         margin-bottom: 0;
@@ -148,11 +151,13 @@
     }
     .about__time{
         grid-template-columns:  100px 184px;
+        grid-template-rows: 35px 14px;
         grid-row-gap: 10px;
     }
     .about__time-text{
         font-size: 11px;
         padding: 11px 0;
+        height: 13px;
     }
     .about__time-end{
         font-size: 11px;

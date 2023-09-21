@@ -33,14 +33,14 @@
     transition: all 0.2s ease-in-out;
 }
 
-.overlay__visible{
+.overlay-visible{
     visibility: visible;
     opacity: 1;
 }
-.open__menu{
+.open-menu{
     display: block;
 }
-.close__menu{
+.close-menu{
     display: none;
 }
 .header__burger-navigation{

@@ -36,7 +36,7 @@ const Login = ({loginUser}) =>{
                 <form className='login__form' onSubmit={handleSubmit}>
                     <label className='login__form-text'>email</label>
                     <input
-                        className='popup__field'
+                        className='popup-field'
                         placeholder='email'
                         id='email'
                         required
@@ -47,7 +47,7 @@ const Login = ({loginUser}) =>{
                     />
                     <label className='login__form-text'>Пароль</label>
                     <input
-                        className='popup__field'
+                        className='popup-field'
                         placeholder='Пароль'
                         id='password'
                         required

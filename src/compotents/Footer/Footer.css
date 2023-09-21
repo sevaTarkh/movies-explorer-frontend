@@ -74,6 +74,7 @@
     .footer__nav-link{
         margin: 0 0 12px 0;
         text-align: center;
+        height: 15px;
     }
     .footer__container{
         flex-direction: column-reverse;
