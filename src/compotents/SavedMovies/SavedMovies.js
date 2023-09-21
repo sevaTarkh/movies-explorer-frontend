@@ -7,12 +7,14 @@ import saved from '../../utils/Saved.js'
 
 function SavedMovies(){
     return(
-        <main className='saved-movies'>
+        <>
             <Header/>
-            <Searchform/>
-            <MoviesCardList movies={saved}/>
+            <main className='saved-movies'>
+                <Searchform/>
+                <MoviesCardList movies={saved}/>
+            </main>
             <Footer/>
-        </main>
+        </>
     )
 }
 

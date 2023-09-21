@@ -31,7 +31,7 @@ function App() {
 
   return (
     <CurrentUserContext.Provider value={currentUser}>
-      <main className="page">
+      <div className="page">
       
         <Routes>  
           <Route path='/' element={<Main/>}/>
@@ -42,7 +42,7 @@ function App() {
           <Route path='/saved-movies' element={<SavedMovies/>}/>;
           <Route path='*' element={<NotFound/>}/>;
         </Routes>
-      </main>
+      </div>
     </CurrentUserContext.Provider>
   );
 }

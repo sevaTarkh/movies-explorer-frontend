@@ -8,7 +8,7 @@ function Header(){
     
     return(
         
-        <header className ={`header  ${location.pathname === '/' ? 'header__main' : 'header__white'}`}>
+        <header className ={`header  ${location.pathname === '/' ? 'header-main' : 'header-white'}`}>
             <Link to='/'><img className='logo header__logo' src={logo} alt='фото логотипа'/></Link>
                 { true  ?
                     <Navigation/>

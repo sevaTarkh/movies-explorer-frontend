@@ -10,15 +10,17 @@ function Movies(){
 
     
     return(
-        <main className='movies'>
+        <>
             <Header/>
-            <Searchform/>
-            <MoviesCardList
-                movies={movie}
-            />
-            <button className='button movies__button-more' type='button'>Еще</button>
+            <main className='movies'>
+                <Searchform/>
+                <MoviesCardList
+                    movies={movie}
+                />
+                <button className='button movies__button-more' type='button'>Еще</button>
+            </main>
             <Footer/>
-        </main>
+        </>
     )
 }
 

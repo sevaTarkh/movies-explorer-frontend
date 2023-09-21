@@ -10,16 +10,19 @@ import Footer from '../Footer/Footer.js'
 
 function Main(){
     return(
-        <main className='content'>
+        <>
             <Header/>
-            <Promo/>
-            <NavTab/>
-            <AboutProject/>
-            <Techs/>
-            <AboutMe/>
-            <Portfolio/>
+            <main className='content'>
+                
+                <Promo/>
+                <NavTab/>
+                <AboutProject/>
+                <Techs/>
+                <AboutMe/>
+                <Portfolio/>
+            </main>
             <Footer/>
-        </main>
+        </>
     )
 }
 

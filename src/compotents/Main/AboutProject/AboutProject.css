@@ -117,6 +117,7 @@
 @media screen and (max-width: 686px){
     .about__container{
         max-width: 284px;
+        margin: 70px auto;
     }
     .title{
         font-size: 18px;

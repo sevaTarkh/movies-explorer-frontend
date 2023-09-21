@@ -58,6 +58,7 @@
 .portfolio__arrow{
     height: 18px;
     width: 18px;
+    margin-bottom: 20px;
 }
 
 @media screen and (max-width: 1162px){
