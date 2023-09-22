@@ -1,0 +1,126 @@
+.profile{
+    display: flex;
+    flex-direction: column;
+}
+
+.profile__container{
+    display: flex;
+    flex-direction: column;
+    margin: 74px auto 70px;
+    width: 410px;
+}
+
+.profile__hello{
+    color: #000;
+    text-align: center;
+    font-family: 'Inter', 'Arial', sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin: 0 auto 123px;
+}
+
+.profile__form{
+    display: flex;
+    flex-direction: column;
+}
+
+.profile__input-container{
+    height: 30px;
+    border-bottom: 1px solid #E8E8E8;
+    margin-bottom: 17px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.profile__input-container:last-of-type{
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.profile__input-text{
+    color: #000;
+    font-family: 'Inter', 'Arial', sans-serif;
+    font-size: 11px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.profile__input{
+    color: #000;
+    text-align: right;
+    font-family: 'Inter', 'Arial', sans-serif;
+    font-size: 11px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    width: 122px;
+    height: 14px;
+    border: none;
+    padding: 0;
+}
+.profile__input:focus{
+    outline: none;
+    border-bottom: 1px solid black;
+}
+.profile__edit-button{
+    margin: 204px 0 0;
+    color: #000;
+    text-align: center;
+    font-family: 'Inter', 'Arial', sans-serif;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    background-color: white;
+}
+
+.profile__exit-button{
+    color: #FF4062;
+    text-align: center;
+    font-family: 'Inter', 'Arial', sans-serif;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin: 16px 0 0;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    background-color: white;
+}
+
+
+@media screen and (max-width: 970px){
+    .profile__container{
+        margin: 236px auto 269px;
+    }
+    .profile__hello{
+        margin-bottom: 96px;
+    }
+    .profile__edit-button{
+        margin: 194px 0 0;
+    }
+}
+
+@media screen and (max-width: 652px){
+    .profile__container{
+        margin: 70px auto 40px;
+        width: 260px;
+    }
+    .profile__exit-button{
+        font-size: 12px;
+    }
+    .profile__edit-button{
+        font-size: 12px;
+        margin: 363px 0 0;
+    }
+    .profile__hello{
+        margin-bottom: 80px;
+    }
+}
