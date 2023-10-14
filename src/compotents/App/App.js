@@ -1,6 +1,6 @@
 import './App.css';
 import React, {  useEffect, useState } from 'react';
-import {Routes, Route, useNavigate, Navigate} from 'react-router-dom';
+import {Routes, Route, useNavigate} from 'react-router-dom';
 import { CurrentUserContext } from '../../contexts/CurrentUserContext.js';
 import Register from '../Register/Register.js';
 import Login from '../Login/Login.js';
@@ -14,6 +14,13 @@ import api from '../../utils/MainApi.js'
 import ProtectedRouteElement from '../ProtectedRoute/ProtectedRoute.js';
 import ErrorPopup from '../ErrorPopup/ErrorPopup.js';
 import EditPopup from '../EditPopup/EditPopup.js'
+import { 
+  BAD_REQUEST_ERROR,
+  AUTH_ERROR,
+  SERVER_ERROR_APP,
+  CONFLICT_ERROR
+} from '../../utils/constants';
+
 
 function App() {
   const [isErrorPopupOpen, setErrorPopupOpen] = useState(false);
@@ -27,7 +34,6 @@ function App() {
   });
 
   const [Usertoken, setToken] = useState('');
-
   const navigate = useNavigate();
 
   useEffect(()=>{
@@ -41,7 +47,6 @@ function App() {
         })
     }
   }, [isLoggedIn, Usertoken])
-
 
   useEffect(() => {
     const token = localStorage.getItem('token');
@@ -71,16 +76,17 @@ function App() {
          console.log(err)
          setErrorPopupOpen(true)
          if(err === 400){
-          setErrorMessage('Произошла ошибка: Bad Request')
+          setErrorMessage(BAD_REQUEST_ERROR)
           }
           if(err===401){
-            setErrorMessage('Произошла ошибка: Auth Error')
+            setErrorMessage(AUTH_ERROR)
             }
           if(err===500){
-          setErrorMessage('Произошла ошибка: Server error, попробуйте позже :(')
+          setErrorMessage(SERVER_ERROR_APP)
           }
       })
   }
+
   function registerUser(data){
     auth.register(data)
     .then(()=>{
@@ -91,47 +97,42 @@ function App() {
       console.log(err)
       setErrorPopupOpen(true)
       if(err === 409){
-        setErrorMessage('Произошла ошибка: User with this email already exists')
+        setErrorMessage(CONFLICT_ERROR)
       }
       if(err===500){
-        setErrorMessage('Произошла ошибка: Server error, попробуйте позже :(')
+        setErrorMessage(SERVER_ERROR_APP)
       }
-      })
-    
+    }) 
   }
 
   function handleUpdateUser(data){
     console.log('1212, ', data)
     api.editProfileInformation(data, Usertoken)
-       .then((data)=>{
+        .then((data)=>{
           setCurrentUser({
             name: data.name,
             email: data.email
           })
           setEditPopupOpen(true)
-       })
-       .catch((err)=>{
+        })
+        .catch((err)=>{
           console.log(err)
           setEditPopupOpen(false)
           setErrorPopupOpen(true)
           if(err === 409){
-            setErrorMessage('Произошла ошибка: User with this email already exists')
+            setErrorMessage(CONFLICT_ERROR)
           }
-       })
+        })
   }
 
   const logedOut = () => {
     localStorage.removeItem("token");
     localStorage.removeItem("inputValue");
     localStorage.removeItem("lastCheckBox");
-    localStorage.removeItem("movie");
     localStorage.removeItem("movies");
-    localStorage.removeItem("lastInput");
     localStorage.removeItem("lastMovies");
     localStorage.removeItem("shortFilm");
-    localStorage.removeItem("jwt");
     localStorage.removeItem("saved-movies");
-    localStorage.removeItem("savedMovies");
     setIsLoggedIn(false);
     navigate("/");
     setToken('');
@@ -142,14 +143,9 @@ function App() {
     setEditPopupOpen(false)
   }
   
-
-  
-
-
   return (
     <CurrentUserContext.Provider value={currentUser}>
       <div className="page">
-      
         <Routes>  
           <Route path='/' element={<Main isLogedIn={isLoggedIn}/>}/>
           <Route path='/signup' element={
@@ -184,7 +180,6 @@ function App() {
             />}
           />;
           <Route path='*' element={<NotFound/>}/>;
-          
         </Routes>
         <ErrorPopup
           isOpen={isErrorPopupOpen}

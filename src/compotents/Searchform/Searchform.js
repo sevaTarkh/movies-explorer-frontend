@@ -24,7 +24,7 @@ function Searchform({getAnyMovies}){
             }
         }
         
-    }, [])
+    }, [getAnyMovies, location.pathname])
 
     const handleFilterFilm = () => {
         setShortFilm(!shortFilm)

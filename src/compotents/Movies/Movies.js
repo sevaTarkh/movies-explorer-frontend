@@ -7,6 +7,16 @@ import Searchform from '../Searchform/Searchform.js';
 import MoviesCardList from '../MoviesCardList/MoviesCardList.js'
 import moviesApi from '../../utils/MoviesApi.js';
 import api from '../../utils/MainApi.js'
+import { 
+    NOT_FOUND, 
+    SERVER_ERROR,
+    MOVIE_DURATION,
+    PC_MOVIES,
+    LAPTOPD_MOVIES,
+    PHONE_MOVIES,
+    PC_ADD_MOVIES,
+    LAPTOP_ADD_MOVIES,
+} from '../../utils/constants';
 
 function Movies(){
     const [moviesList, setMoviesList] = useState([]);
@@ -18,6 +28,7 @@ function Movies(){
     const [serverErrorMessage, setServerErrorMessage] = useState('');
     const token = localStorage.getItem('token');
     const [saveId, setSavedId] = useState('')
+    
 
     useEffect(()=>{
         let savedMovies = JSON.parse(localStorage.getItem('saved-movies'))
@@ -31,10 +42,10 @@ function Movies(){
                 .catch((err)=>{
                     console.log(err)
                     setIsLoading(false);
-                    setServerErrorMessage('Во время запроса произошла ошибка. Возможно, проблема с соединением или сервер недоступен. Подождите немного и попробуйте ещё раз')
+                    setServerErrorMessage(SERVER_ERROR)
                 })
         }
-    }, [])
+    }, [token])
 
 
     function debounce(func, ms) {
@@ -86,13 +97,9 @@ function Movies(){
         })
     }
     
-
     const handleResize = debounce(() => {
         setWindowSize(window.innerWidth);
       }, 50);
-
-
-    
 
     useEffect(()=>{
         if (moviesList === null){
@@ -105,8 +112,6 @@ function Movies(){
         }
     }, [setButtonMoreHide, moviesList, amountFromWidth])
 
-
-
     useEffect(() => {
         window.addEventListener('resize', handleResize);
         return () => {
@@ -114,21 +119,17 @@ function Movies(){
         };
     }, [handleResize]);
 
-
-
     useEffect(()=>{
         if (windowSize > 888) {
-            setamountFromWidth(12)
+            setamountFromWidth(PC_MOVIES)
         }  
         if(windowSize < 888 && windowSize > 589) {
-            setamountFromWidth(8)
+            setamountFromWidth(LAPTOPD_MOVIES)
         } 
         if(windowSize < 589) {
-            setamountFromWidth(5)
+            setamountFromWidth(PHONE_MOVIES)
         }
     }, [setamountFromWidth, windowSize])
-
-
 
     function searchFilter(array, inputValue, shortFilm) {
         if (!array) {
@@ -142,23 +143,21 @@ function Movies(){
             .includes(inputValue.toLowerCase()));
         }
         if (shortFilm) {
-          return filtered.filter((element) => element.duration <= 40);
+          return filtered.filter((element) => element.duration <= MOVIE_DURATION);
         }
         return filtered;
     }
-
 
     const filter = (inputValue, shortFilm) => {
         const storedMovies = JSON.parse(localStorage.getItem('movies'));
         const filtered = searchFilter(storedMovies, inputValue, shortFilm);
         setMoviesList(filtered);
         if (filtered.length === 0){
-            setErrorMessage('Ничего не найдено')
+            setErrorMessage(NOT_FOUND)
         }else{
             setErrorMessage('')
         }
     };
-
 
     const getMoviesList = (inputValue, shortFilm) =>{
         setButtonMoreHide(false)
@@ -173,20 +172,19 @@ function Movies(){
             })
             .catch((err) => {
                 console.log(err)
-                setServerErrorMessage('Во время запроса произошла ошибка. Возможно, проблема с соединением или сервер недоступен. Подождите немного и попробуйте ещё раз')
+                setServerErrorMessage(SERVER_ERROR)
             })
         } else {
             setIsLoading(false);
         }
     }
 
-
     const handleAddFilms = () => {
         if (windowSize > 888) {
-            setamountFromWidth(amountFromWidth + 3)
+            setamountFromWidth(amountFromWidth + PC_ADD_MOVIES)
         }  
         if(windowSize < 888) {
-            setamountFromWidth(amountFromWidth + 2)
+            setamountFromWidth(amountFromWidth + LAPTOP_ADD_MOVIES)
         } 
     }
 

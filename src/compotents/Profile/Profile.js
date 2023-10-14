@@ -1,13 +1,10 @@
 import './Profile.css';
 import Header from '../Header/Header.js';
-import React, { useEffect, useContext } from 'react';
-import { CurrentUserContext } from '../../contexts/CurrentUserContext.js';
+import React, { useEffect } from 'react';
 import {useFormValiditi} from '../../hooks/useFormValidity.js';
 
 function Profile({handleUpdateUserInfo, logedOut, currentUser}){
     const [ values, errors, isValid, handleChange, setValues ] = useFormValiditi();
-
-
 
     useEffect(() => {
         setValues({
@@ -15,7 +12,6 @@ function Profile({handleUpdateUserInfo, logedOut, currentUser}){
             email: currentUser.email
         });
     }, [setValues, currentUser.name, currentUser.email])
-
 
     const updateUserInfo = (e) => {
         e.preventDefault()
@@ -25,6 +21,7 @@ function Profile({handleUpdateUserInfo, logedOut, currentUser}){
     const logedOutFromAccaunt = () => {
         logedOut()
     }
+    
     const isEditButtonValid = isValid && (values.name !== currentUser.name && values.email !== currentUser.email);
 
     return(
