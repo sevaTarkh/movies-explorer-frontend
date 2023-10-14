@@ -79,7 +79,7 @@ class Api{
 }
 
 const api = new Api({
-    baseUrl: 'https://api.kino.nomoredomainsicu.ru/', 
+    baseUrl: 'https://api.kino.nomoredomainsicu.ru', 
 });
 
 export default api;

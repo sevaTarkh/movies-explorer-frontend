@@ -46,7 +46,7 @@ class Auth{
 }
 
 const auth = new Auth({
-    baseUrl: 'https://api.kino.nomoredomainsicu.ru/', 
+    baseUrl: 'https://api.kino.nomoredomainsicu.ru', 
     headers: {
         'Content-Type': 'application/json'
     },
