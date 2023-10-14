@@ -2,3 +2,17 @@
     display: flex;
     flex-direction: column;
 }
+.saved-movies-text{
+    color: #000;
+    text-align: center;
+    font-family: 'Inter', 'Arial', sans-serif;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    border: none;
+    margin: 61px auto 89px;
+    padding: 0;
+    width: 320px;
+    height: 36px;
+}

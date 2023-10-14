@@ -13,7 +13,6 @@ function Main(){
         <>
             <Header/>
             <main className='content'>
-                
                 <Promo/>
                 <NavTab/>
                 <AboutProject/>

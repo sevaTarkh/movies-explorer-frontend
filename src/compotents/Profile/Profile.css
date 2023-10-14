@@ -76,7 +76,6 @@
     line-height: normal;
     border: none;
     padding: 0;
-    cursor: pointer;
     background-color: white;
 }
 
@@ -94,7 +93,9 @@
     cursor: pointer;
     background-color: white;
 }
-
+.button-edit__disabled{
+    color: #a0a0a0;
+}
 
 @media screen and (max-width: 970px){
     .profile__container{

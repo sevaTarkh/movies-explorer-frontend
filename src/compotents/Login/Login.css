@@ -84,7 +84,9 @@
     text-decoration: none;
     margin-left: 6px;
 }
-
+.button__disabled{
+    background-color: #a0a0a0;
+}
 @media screen and (max-width: 970px){
     .login__container{
         margin: 232px auto;
