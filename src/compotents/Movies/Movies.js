@@ -16,6 +16,8 @@ import {
     PHONE_MOVIES,
     PC_ADD_MOVIES,
     LAPTOP_ADD_MOVIES,
+    PC_WIDTH,
+    LAPTOP_WIDTH
 } from '../../utils/constants';
 
 function Movies(){
@@ -114,13 +116,13 @@ function Movies(){
     }, [handleResize]);
 
     useEffect(()=>{
-        if (windowSize > 888) {
+        if (windowSize > PC_WIDTH) {
             setamountFromWidth(PC_MOVIES)
         }  
-        if(windowSize < 888 && windowSize > 589) {
+        if(windowSize < PC_WIDTH && windowSize > LAPTOP_WIDTH) {
             setamountFromWidth(LAPTOPD_MOVIES)
         } 
-        if(windowSize < 589) {
+        if(windowSize < LAPTOP_WIDTH) {
             setamountFromWidth(PHONE_MOVIES)
         }
     }, [setamountFromWidth, windowSize])
@@ -169,10 +171,10 @@ function Movies(){
     }
 
     const handleAddFilms = () => {
-        if (windowSize > 888) {
+        if (windowSize > PC_WIDTH) {
             setamountFromWidth(amountFromWidth + PC_ADD_MOVIES)
         }  
-        if(windowSize < 888) {
+        if(windowSize < PC_WIDTH) {
             setamountFromWidth(amountFromWidth + LAPTOP_ADD_MOVIES)
         } 
     }
