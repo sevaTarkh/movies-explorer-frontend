@@ -132,3 +132,8 @@
     }
 }
 
+@media screen and (max-width: 489px){
+    .movie__button-delete{
+        display: block;
+    }
+}

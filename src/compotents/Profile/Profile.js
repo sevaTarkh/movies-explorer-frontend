@@ -1,11 +1,13 @@
 import './Profile.css';
 import Header from '../Header/Header.js';
-import React, { useEffect } from 'react';
+import React, { useEffect, useContext } from 'react';
 import {useFormValiditi} from '../../hooks/useFormValidity.js';
+import { CurrentUserContext } from '../../context/CurrentUserContext';
 
-
-function Profile({handleUpdateUserInfo, logedOut, currentUser}){
+function Profile({handleUpdateUserInfo, logedOut}){
     const [ values, errors, isValid, handleChange, setValues ] = useFormValiditi();
+
+    const { currentUser } = useContext(CurrentUserContext);
 
     useEffect(() => {
         setValues({
@@ -23,7 +25,7 @@ function Profile({handleUpdateUserInfo, logedOut, currentUser}){
         logedOut()
     }
     
-    const isEditButtonValid = isValid && (values.name !== currentUser.name && values.email !== currentUser.email);
+    const isEditButtonValid = isValid && (values.name !== currentUser.name || values.email !== currentUser.email);
 
     return(
         <>
@@ -46,6 +48,7 @@ function Profile({handleUpdateUserInfo, logedOut, currentUser}){
                                 minLength={2}
                                 maxLength={15}
                                 value={values.name ? values.name : ''}
+                                pattern='/.+@.+\..+/'
                                 onChange={handleChange}
                             />
                         </div>

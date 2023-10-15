@@ -162,7 +162,6 @@ function App() {
             <ProtectedRouteElement 
               element={Profile}
               handleUpdateUserInfo={handleUpdateUser}
-              currentUser={currentUser}
               logedOut={logedOut}
               isloggedin={isLoggedIn}
               />}
