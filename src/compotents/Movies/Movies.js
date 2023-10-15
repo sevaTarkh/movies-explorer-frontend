@@ -18,7 +18,7 @@ import {
     LAPTOP_ADD_MOVIES,
     PC_WIDTH,
     LAPTOP_WIDTH
-} from '../../utils/constants';
+} from '../../utils/constants.js';
 
 function Movies(){
     const [moviesList, setMoviesList] = useState([]);

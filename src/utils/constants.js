@@ -7,6 +7,8 @@ export const LAPTOPD_MOVIES = 8;
 export const PHONE_MOVIES = 5;
 export const PC_ADD_MOVIES = 3;
 export const LAPTOP_ADD_MOVIES = 2;
+export const PC_WIDTH = 888;
+export const LAPTOP_WIDTH = 589;
 
 export const BAD_REQUEST_ERROR = 'Произошла ошибка: Bad Request';
 export const AUTH_ERROR = 'Произошла ошибка: Auth Error';
