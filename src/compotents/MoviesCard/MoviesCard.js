@@ -8,9 +8,12 @@ function MoviesCard({movie, onMovieLike, onMovieDelete}){
     const [isSave, setIsSaved] = useState(false)
     const location = useLocation();
     
-    useEffect(() => {         let savedMovies = JSON.parse(localStorage.getItem('saved-movies')) 
-    if (savedMovies.some((item) => item.movieId ===  movie.id)) {           setIsSaved(true); 
-    }     }, [ movie.id]);
+    useEffect(() => {         
+        let savedMovies = JSON.parse(localStorage.getItem('saved-movies')) 
+        if (savedMovies.some((item) => item.movieId ===  movie.id)) {           
+            setIsSaved(true); 
+        }  
+    }, [ movie.id]);
 
     const handleSaveMovie = () => {
         onMovieLike(movie, setIsSaved)
@@ -19,6 +22,7 @@ function MoviesCard({movie, onMovieLike, onMovieDelete}){
     const handleDeleteMovie = () => {
         onMovieDelete(movie, setIsSaved)
     }
+    
     return(
         <li className='movie'>
             <a className='movie__image-link' href={movie.trailerLink} target='_blank' rel='noreferrer'>

@@ -27,8 +27,6 @@ function Movies(){
     const [errorMessage, setErrorMessage] = useState('');
     const [serverErrorMessage, setServerErrorMessage] = useState('');
     const token = localStorage.getItem('token');
-    const [saveId, setSavedId] = useState('')
-    
 
     useEffect(()=>{
         let savedMovies = JSON.parse(localStorage.getItem('saved-movies'))
@@ -47,7 +45,6 @@ function Movies(){
         }
     }, [token])
 
-
     function debounce(func, ms) {
         let timer;
         return () => {
@@ -57,12 +54,11 @@ function Movies(){
             func.apply(this, arguments);
           }, ms);
         };
-      }
-      const handleSaveMovie = (movie, setIsSaved) => {
-        
+    }
+
+    const handleSaveMovie = (movie, setIsSaved) => {
         api.saveMovie(movie, token)
           .then((newMovie)=>{
-            setSavedId(newMovie._id)
             let savedMovies = JSON.parse(localStorage.getItem('saved-movies'))
             savedMovies.push(newMovie)
             setIsSaved(true)
@@ -71,13 +67,11 @@ function Movies(){
           .catch((err)=>{
             console.log(err)
           })
-        }
+    }
 
     const handleDeleteMovie = (movie, setIsSaved) => {
-        console.log(saveId)
         let savedMovies = JSON.parse(localStorage.getItem('saved-movies'))
         const savedMovieId = savedMovies.find((item) => item.movieId === movie.id);
-        console.log(savedMovieId)
         api.handleRemoveMovie(savedMovieId._id, token)
         .then(() =>{
             setIsSaved(false)
@@ -136,7 +130,6 @@ function Movies(){
           return [];
         }
         let filtered = [...array];
-        console.log(inputValue)
         if (inputValue) {
           filtered = filtered.filter((element) => element.nameRU
             .toLowerCase()
@@ -149,7 +142,7 @@ function Movies(){
     }
 
     const filter = (inputValue, shortFilm) => {
-        const storedMovies = JSON.parse(localStorage.getItem('movies'));
+        const storedMovies = JSON.parse(localStorage.getItem('movies')) || [];
         const filtered = searchFilter(storedMovies, inputValue, shortFilm);
         setMoviesList(filtered);
         if (filtered.length === 0){
@@ -163,7 +156,6 @@ function Movies(){
         setButtonMoreHide(false)
         setErrorMessage('')
         setIsLoading(true);
-        if(inputValue){
             moviesApi.getMovies()
             .then((movies) => {
                 localStorage.setItem('movies', JSON.stringify(movies))
@@ -174,9 +166,6 @@ function Movies(){
                 console.log(err)
                 setServerErrorMessage(SERVER_ERROR)
             })
-        } else {
-            setIsLoading(false);
-        }
     }
 
     const handleAddFilms = () => {

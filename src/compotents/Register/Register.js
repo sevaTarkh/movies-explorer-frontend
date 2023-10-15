@@ -59,7 +59,7 @@ const Register = ({registerUser}) => {
                         required
                         name='password'
                         type='password'
-                        value={values.password}
+                        value={values.password ? values.password : ''}
                         onChange={handleChange}
                         minLength={8}
                         maxLength={16}

@@ -37,6 +37,7 @@ function App() {
   const navigate = useNavigate();
 
   useEffect(()=>{
+    
     if(isLoggedIn){
       api.getUserInformationFromServer(Usertoken)
         .then((data) =>{
@@ -106,12 +107,11 @@ function App() {
   }
 
   function handleUpdateUser(data){
-    console.log('1212, ', data)
     api.editProfileInformation(data, Usertoken)
         .then((data)=>{
           setCurrentUser({
-            name: data.name,
-            email: data.email
+            name: data.user.name,
+            email: data.user.email
           })
           setEditPopupOpen(true)
         })

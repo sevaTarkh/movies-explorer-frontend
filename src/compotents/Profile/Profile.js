@@ -3,13 +3,14 @@ import Header from '../Header/Header.js';
 import React, { useEffect } from 'react';
 import {useFormValiditi} from '../../hooks/useFormValidity.js';
 
+
 function Profile({handleUpdateUserInfo, logedOut, currentUser}){
     const [ values, errors, isValid, handleChange, setValues ] = useFormValiditi();
 
     useEffect(() => {
         setValues({
             name: currentUser.name,
-            email: currentUser.email
+            email: currentUser.email 
         });
     }, [setValues, currentUser.name, currentUser.email])
 

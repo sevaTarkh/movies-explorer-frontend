@@ -23,8 +23,7 @@ function Searchform({getAnyMovies}){
                 getAnyMovies(lastInputValue, lastCheckBoxValue)
             }
         }
-        
-    }, [getAnyMovies, location.pathname])
+    }, [])
 
     const handleFilterFilm = () => {
         setShortFilm(!shortFilm)
