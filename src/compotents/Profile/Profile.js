@@ -2,7 +2,7 @@ import './Profile.css';
 import Header from '../Header/Header.js';
 import React, { useEffect, useContext } from 'react';
 import {useFormValiditi} from '../../hooks/useFormValidity.js';
-import { CurrentUserContext } from '../../context/CurrentUserContext';
+import { CurrentUserContext } from '../../context/CurrentUserContext.js';
 
 function Profile({handleUpdateUserInfo, logedOut}){
     const [ values, errors, isValid, handleChange, setValues ] = useFormValiditi();
