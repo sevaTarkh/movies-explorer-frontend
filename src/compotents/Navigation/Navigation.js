@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import {Link, useLocation} from 'react-router-dom';
+import {NavLink, Link, useLocation} from 'react-router-dom';
 import './Navigation.css';
 import icon from '../../images/manIconHeader.svg';
 import iconblack from '../../images/iconblack.svg';
@@ -40,12 +40,12 @@ function Navigation(){
                         <Link to='/' className='link header__link-nav'>
                             <p className='header__text-nav'>Главная</p>
                         </Link>
-                        <Link to='/movies' className='link header__link-nav'>
-                            <p className='header__text-nav'>Фильмы</p>
-                        </Link>
-                        <Link to='/saved-movies' className='link header__link-nav'>
-                            <p className='header__text-nav'>Сохраненные фильмы</p>
-                        </Link>
+                        <NavLink to='/movies' className={ ({isActive}) => isActive ? 'header__link-active link header__link-nav header__text-nav' : 'link header__link-nav header__text-nav'}>
+                            Фильмы
+                        </NavLink>
+                        <NavLink to='/saved-movies' className={ ({isActive}) => isActive ? 'header__link-active link header__link-nav header__text-nav' : 'link header__link-nav header__text-nav'}>
+                            Сохраненные фильмы
+                        </NavLink>
                         <Link to='/profile' className='link header__link-nav'>
                             <div className='header__profile-container'>
                                 <p className='header__text-acc'>Аккаунт</p>

@@ -1,5 +1,5 @@
 import './App.css';
-import React, {  useEffect, useState } from 'react';
+import React, {  useEffect, useState, useCallback } from 'react';
 import {Routes, Route, useNavigate} from 'react-router-dom';
 import { CurrentUserContext } from '../../contexts/CurrentUserContext.js';
 import Register from '../Register/Register.js';
@@ -26,7 +26,8 @@ function App() {
   const [isErrorPopupOpen, setErrorPopupOpen] = useState(false);
   const [isEditPopupOpen, setEditPopupOpen] = useState(false);
   const [isErrorMessage, setErrorMessage] = useState('')
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
   const [currentUser, setCurrentUser] = useState({
     name: '',
     _id: '',
@@ -37,8 +38,28 @@ function App() {
   const navigate = useNavigate();
 
   useEffect(()=>{
-    
-    if(isLoggedIn){
+    const token = localStorage.getItem('token');
+    if (token) {
+      auth.checkToken(token)
+        .then((res) => {
+          setCurrentUser(res.user)
+          setIsLoggedIn(true)
+          setToken(token)
+        })
+        .catch((err) => {
+          localStorage.removeItem('token')
+        })  
+    }else{
+      logedOut()
+    }
+  }, [isLoggedIn]);
+
+  
+
+  
+  
+  useEffect(()=>{
+    if(Usertoken){
       api.getUserInformationFromServer(Usertoken)
         .then((data) =>{
           setCurrentUser(data.user)
@@ -49,22 +70,10 @@ function App() {
     }
   }, [isLoggedIn, Usertoken])
 
-  useEffect(() => {
-    const token = localStorage.getItem('token');
-    setToken(token)
-    if (token) {
-      auth.checkToken(token)
-        .then(() => {
-          setIsLoggedIn(true);
-        })
-        .catch((err) => {
-          localStorage.removeItem('token')
-          console.log(err);
-        })  
-    }
-  }, [isLoggedIn]);
+
 
   function loginUser(data){
+    setIsLoading(true)
     const { email, password } = data;
       auth.login(email, password)
       .then((user)=>{
@@ -86,9 +95,11 @@ function App() {
           setErrorMessage(SERVER_ERROR_APP)
           }
       })
+      .finally(() => setIsLoading(false));
   }
 
   function registerUser(data){
+    setIsLoading(true)
     auth.register(data)
     .then(()=>{
       loginUser(data)
@@ -103,10 +114,12 @@ function App() {
       if(err===500){
         setErrorMessage(SERVER_ERROR_APP)
       }
-    }) 
+    })
+    .finally(() => setIsLoading(false));
   }
 
   function handleUpdateUser(data){
+    setIsLoading(true)
     api.editProfileInformation(data, Usertoken)
         .then((data)=>{
           setCurrentUser({
@@ -123,6 +136,7 @@ function App() {
             setErrorMessage(CONFLICT_ERROR)
           }
         })
+        .finally(() => setIsLoading(false));
   }
 
   const logedOut = () => {
@@ -134,7 +148,6 @@ function App() {
     localStorage.removeItem("shortFilm");
     localStorage.removeItem("saved-movies");
     setIsLoggedIn(false);
-    navigate("/");
     setToken('');
   }
 
@@ -151,11 +164,13 @@ function App() {
           <Route path='/signup' element={
             <Register 
                 registerUser={registerUser}
+                isLoading={isLoading}
             />}
           />
           <Route path='/signin' element={
             <Login 
               loginUser={loginUser}
+              isLoading={isLoading}
             />}
           />
           <Route path='/profile' element={
@@ -164,6 +179,7 @@ function App() {
               handleUpdateUserInfo={handleUpdateUser}
               logedOut={logedOut}
               isloggedin={isLoggedIn}
+              isLoading={isLoading}
               />}
             />;
           <Route path='/movies' element={

@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import './Login.css';
 import {useFormValiditi} from '../../hooks/useFormValidity.js';
 
-const Login = ({loginUser}) =>{
+const Login = ({loginUser, isLoading}) =>{
     const [ values, errors, isValid, handleChange ] = useFormValiditi();
 
 
@@ -36,6 +36,8 @@ const Login = ({loginUser}) =>{
                         value={values.email ? values.email : ''}
                         onChange={handleChange}
                         autoComplete='off'
+                        pattern='^.+@.+\..+$'
+                        disabled={isLoading}
                     />
                     <span className='register__error'>{errors.email}</span>
                     <label className='login__form-text'>Пароль</label>
@@ -51,9 +53,10 @@ const Login = ({loginUser}) =>{
                         minLength={8}
                         maxLength={16}
                         autoComplete='off'
+                        disabled={isLoading}
                     />
                     <span className='register__error'>{errors.password}</span>
-                    <button type='submit' className={` login__button ${!isValid? 'button__disabled' : 'button'}`} disabled={!isValid ? true : false}>Войти</button>
+                    <button type='submit' className={` login__button ${(!isValid || isLoading) ? 'button__disabled' : 'button'}`} disabled={(!isValid || isLoading) ? true : false}>Войти</button>
                 </form>
                 <p className='login__question'>
                     Еще не зарегестрированы? 

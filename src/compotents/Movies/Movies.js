@@ -154,10 +154,13 @@ function Movies(){
         }
     };
 
+    
+
     const getMoviesList = (inputValue, shortFilm) =>{
         setButtonMoreHide(false)
         setErrorMessage('')
         setIsLoading(true);
+        if (!JSON.parse(localStorage.getItem('movies'))){
             moviesApi.getMovies()
             .then((movies) => {
                 localStorage.setItem('movies', JSON.stringify(movies))
@@ -168,6 +171,10 @@ function Movies(){
                 console.log(err)
                 setServerErrorMessage(SERVER_ERROR)
             })
+        } else{
+            filter(inputValue, shortFilm)
+            setIsLoading(false);
+        }   
     }
 
     const handleAddFilms = () => {

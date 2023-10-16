@@ -4,7 +4,7 @@ import logo from '../../images/logoHeader.svg';
 import './Register.css';
 import {useFormValiditi} from '../../hooks/useFormValidity.js';
 
-const Register = ({registerUser}) => {
+const Register = ({registerUser, isLoading}) => {
     const [ values, errors, isValid, handleChange ] = useFormValiditi();
 
     function handleSubmit(e) {
@@ -36,6 +36,7 @@ const Register = ({registerUser}) => {
                         minLength={2}
                         maxLength={15}
                         autoComplete="off"
+                        disabled={isLoading}
                     />
                     <span className='register__error'>{errors.name}</span>
                     <label className='register__form-text'>E-mail</label>
@@ -49,6 +50,8 @@ const Register = ({registerUser}) => {
                         value={values.email ? values.email : ''}
                         onChange={handleChange}
                         autoComplete="off"
+                        pattern='^.+@.+\..+$'
+                        disabled={isLoading}
                     />
                     <span className='register__error'>{errors.email}</span>
                     <label className='register__form-text'>Пароль</label>
@@ -63,9 +66,10 @@ const Register = ({registerUser}) => {
                         onChange={handleChange}
                         minLength={8}
                         maxLength={16}
+                        disabled={isLoading}
                     />
                     <span className='register__error'>{errors.password}</span>
-                    <button type='submit' className={` register__button ${!isValid? 'button__disabled' : 'button'}`} disabled={!isValid ? true : false}>Зарегестрироваться</button>
+                    <button type='submit' className={` register__button ${(!isValid || isLoading) ? 'button__disabled' : 'button'}`} disabled={(!isValid || isLoading) ? true : false}>Зарегестрироваться</button>
                 </form>
                 <p className='register__question'>
                     Уже зарегестрированы? 

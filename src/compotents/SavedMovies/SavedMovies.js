@@ -9,13 +9,15 @@ import api from '../../utils/MainApi.js'
 import { NOT_FOUND, SERVER_ERROR } from '../../utils/constants';
 
 function SavedMovies(){
-    const [movies, setMovies] = useState([])
+    const [movies, setMovies] = useState(JSON.parse(localStorage.getItem('savedMovies')) || [])
     const [isLoading, setIsLoading] = useState(false);
     const token = localStorage.getItem('token');
     const [errorMessage, setErrorMessage] = useState('');
     const [serverErrorMessage, setServerErrorMessage] = useState('');
+    
 
     useEffect(()=>{
+        console.log('123123')
         setIsLoading(true);    
         api.getSavedMovies(token)
             .then((newMovies)=>{
@@ -49,6 +51,7 @@ function SavedMovies(){
     const filter = (inputValue, shortFilm) =>{
         const storedMovies = JSON.parse(localStorage.getItem('saved-movies'));
         const filtered = searchFilter(storedMovies, inputValue, shortFilm);
+        console.log(filtered)
         setMovies(filtered)
         if (filtered.length === 0){
             setErrorMessage(NOT_FOUND)
@@ -59,18 +62,20 @@ function SavedMovies(){
     
     const handleFilterSavedMovies = (inputValue, shortFilm) =>{
         filter(inputValue, shortFilm) 
-    } 
+    }
 
     const handleFilterMovies = (movies, id) => {
-         return movies.filter((item) => item._id !== id)
+        return movies.filter((item) => item._id !== id)
     }
 
     const handleDeleteMovie = (movie, setIsSaved) => {
+        let savedMovies = JSON.parse(localStorage.getItem('saved-movies'))
         api.handleRemoveMovie(movie._id, token)
         .then(() =>{
             setIsSaved(false);
-            const SavedmoviesList = handleFilterMovies(movies, movie._id)
-            setMovies(SavedmoviesList)
+            const SavedmoviesFilterList = handleFilterMovies(movies, movie._id)
+            const SavedmoviesList = handleFilterMovies(savedMovies, movie._id)
+            setMovies((SavedmoviesFilterList))
             localStorage.setItem('saved-movies', JSON.stringify(SavedmoviesList));
         })
         .catch((err)=>{

@@ -4,10 +4,10 @@ import React, { useEffect, useContext } from 'react';
 import {useFormValiditi} from '../../hooks/useFormValidity.js';
 import { CurrentUserContext } from '../../contexts/CurrentUserContext.js'
 
-function Profile({handleUpdateUserInfo, logedOut}){
+function Profile({handleUpdateUserInfo, logedOut, isLoading}){
     const [ values, errors, isValid, handleChange, setValues ] = useFormValiditi();
 
-    const { currentUser } = useContext(CurrentUserContext);
+    const currentUser = useContext(CurrentUserContext);
 
     useEffect(() => {
         setValues({
@@ -48,8 +48,8 @@ function Profile({handleUpdateUserInfo, logedOut}){
                                 minLength={2}
                                 maxLength={15}
                                 value={values.name ? values.name : ''}
-                                pattern='/.+@.+\..+/'
                                 onChange={handleChange}
+                                disabled={isLoading}
                             />
                         </div>
                         <span className='register__error'>{errors.name}</span>
@@ -64,12 +64,14 @@ function Profile({handleUpdateUserInfo, logedOut}){
                                 type='email'
                                 placeholder='email'
                                 name='email'
+                                pattern='^.+@.+\..+$'
                                 value={values.email ? values.email : ''}
                                 onChange={handleChange}
+                                disabled={isLoading}
                             />
                         </div>
                         <span className='register__error'>{errors.email}</span>
-                        <button className={`profile__edit-button ${!isEditButtonValid? 'button-edit__disabled' : 'button'}`} type='submit' disabled={!isEditButtonValid ? true : false}>Редактировать</button>
+                        <button className={`profile__edit-button ${(!isEditButtonValid || isLoading)? 'button-edit__disabled' : 'button'}`} type='submit' disabled={(!isEditButtonValid || isLoading) ? true : false}>Редактировать</button>
                         <button className='button profile__exit-button' type='button' onClick={logedOutFromAccaunt}>Выйти из аккаунта</button>
                     </form>
                 </section>
