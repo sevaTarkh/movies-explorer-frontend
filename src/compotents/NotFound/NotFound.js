@@ -12,7 +12,7 @@ function NotFound(){
         <main className="notfound">
             <h1 className="notfound__title">404</h1>
             <p className="notfound__text">Страница не найдена</p>
-            <Link className=" link notfound__button" onClick={goBack}>
+            <Link className="link notfound__button" onClick={goBack}>
               Назад
             </Link>
         </main>

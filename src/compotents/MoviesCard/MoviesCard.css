@@ -15,6 +15,7 @@
     white-space: nowrap; /* Текст не переносится */
     overflow: hidden; /* Обрезаем всё за пределами блока */
     text-overflow: ellipsis; /* Добавляем многоточие */
+    max-width: 260px;
 }
 
 .movie__duration{
@@ -131,3 +132,11 @@
     }
 }
 
+@media screen and (max-width: 489px){
+    .movie__button-delete{
+        display: block;
+    }
+    .movie__button{
+        display: block;
+    }
+}

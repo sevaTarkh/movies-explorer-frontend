@@ -81,7 +81,9 @@
     padding: 0;
     border: none;
 }
-
+.button__disabled{
+    background-color: #a0a0a0;
+}
 .button:hover{
     opacity: .7;
     cursor: pointer;
@@ -117,8 +119,12 @@
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+    margin-bottom: 5px;
 }
-
+.register__error-hidden{
+    display: none;
+    display: block;
+}
 
 @media screen and (max-width: 970px){
     .register__container{

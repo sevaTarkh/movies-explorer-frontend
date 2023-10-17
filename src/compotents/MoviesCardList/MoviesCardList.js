@@ -2,7 +2,7 @@ import './MoviesCardList.css';
 import MoviesCard from '../MoviesCard/MoviesCard.js'
 
 
-function MoviesCardList({movies}){
+function MoviesCardList({movies, onMovieLike, onMovieDelete}){
     return(
         <section className='movies-list'>
             <ul className='movies-list__cards'>
@@ -11,7 +11,9 @@ function MoviesCardList({movies}){
                         return(
                             <MoviesCard 
                                 movie={movie}
-                                key={movie.id}
+                                key={movie.id || movie._id}
+                                onMovieDelete={onMovieDelete}
+                                onMovieLike={onMovieLike}
                             />
                         );
                     })

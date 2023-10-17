@@ -1,28 +1,18 @@
-import React, {useState} from 'react';
-import { useNavigate } from 'react-router-dom'
+import React from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../images/logoHeader.svg';
 import './Register.css';
+import {useFormValiditi} from '../../hooks/useFormValidity.js';
 
-const Register = ({registerUser}) => {
-    const navigate = useNavigate();
-    const [form, setForm] = useState({
-        name: '',
-        email: '',
-        password: '',
-    })
-    const handleChange = (e) =>{
-        const input = e.target;
-        setForm({
-            ...form,
-            [input.name]: input.value
-        })
-    }
+const Register = ({registerUser, isLoading}) => {
+    const [ values, errors, isValid, handleChange ] = useFormValiditi();
 
-    const handleSubmit = (e) =>{
+    function handleSubmit(e) {
         e.preventDefault();
-        registerUser(form)
+        const { name, email, password } = values;
+        registerUser({ name, email, password })
     }
+    
     return(
         <main className='register'>
             <div className=' register__container'>
@@ -32,7 +22,7 @@ const Register = ({registerUser}) => {
                     </Link>
                     <h1 className='register__title'>Добро пожаловать!</h1>
                 </div>
-                <form className='register__form' onSubmit={handleSubmit}>
+                <form className='register__form' onSubmit={handleSubmit} noValidate>
                     <label className='register__form-text'>Имя</label>
                     <input
                         className='popup-field'
@@ -41,11 +31,14 @@ const Register = ({registerUser}) => {
                         required
                         name='name'
                         type='text'
-                        value={form.name}
+                        value={values.name ? values.name : ''}
                         onChange={handleChange}
                         minLength={2}
                         maxLength={15}
+                        autoComplete="off"
+                        disabled={isLoading}
                     />
+                    <span className='register__error'>{errors.name}</span>
                     <label className='register__form-text'>E-mail</label>
                     <input
                         className='popup-field'
@@ -54,9 +47,13 @@ const Register = ({registerUser}) => {
                         required
                         name='email'
                         type='email'
-                        value={form.email}
+                        value={values.email ? values.email : ''}
                         onChange={handleChange}
+                        autoComplete="off"
+                        pattern='^.+@.+\..+$'
+                        disabled={isLoading}
                     />
+                    <span className='register__error'>{errors.email}</span>
                     <label className='register__form-text'>Пароль</label>
                     <input
                         className='popup-field'
@@ -65,13 +62,14 @@ const Register = ({registerUser}) => {
                         required
                         name='password'
                         type='password'
-                        value={form.password}
+                        value={values.password ? values.password : ''}
                         onChange={handleChange}
-                        minLength={2}
-                        maxLength={15}
+                        minLength={8}
+                        maxLength={16}
+                        disabled={isLoading}
                     />
-                    <span className='register__error'>Что-то пошло не так...</span>
-                    <button type='submit' className='button register__button' onClick={() => navigate('/signin')}>Зарегестрироваться</button>
+                    <span className='register__error'>{errors.password}</span>
+                    <button type='submit' className={` register__button ${(!isValid || isLoading) ? 'button__disabled' : 'button'}`} disabled={(!isValid || isLoading) ? true : false}>Зарегестрироваться</button>
                 </form>
                 <p className='register__question'>
                     Уже зарегестрированы? 
