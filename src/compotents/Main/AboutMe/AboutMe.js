@@ -13,7 +13,7 @@ function AboutMe(){
                         <p className='aboutme__text'>
                             Я живу в Москве, закончил факультет комплексной безопаснотси ТЭК.
                             Я люблю заниматься спортом и слушать музыку. В 23 году оканчиваю курсы по
-                            веб-разработке. Моя метча - создать новый поисковик.
+                            веб-разработке. Моя мечта - создать новый поисковик.
                         </p>
                         <a className='link aboutme__link' href='https://github.com/sevaTarkh' target='_blank' rel="noreferrer">Github</a>
                     </div>
